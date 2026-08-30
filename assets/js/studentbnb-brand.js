@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.brand').forEach(b=>{const labels=[...b.children].filter(e=>e.tagName==='SPAN'&&!e.classList.contains('brand-icon')),l=labels[labels.length-1];if(!l)return;const s=l.querySelector('small'),h=s?s.outerHTML:'';l.innerHTML='Student<strong>BnB</strong>'+h;});
   const hero=document.querySelector('.home-hero .hero-copy');
   const brand=document.querySelector('.site-header .brand');if(brand)brand.setAttribute('aria-label','StudentBnB home');
   if(hero){
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const sh=hero.querySelector('.search-card h2');if(sh)sh.textContent='Gdzie chcesz się zatrzymać?';
   }
   const intl=document.querySelector('.footer-international > strong');if(intl)intl.textContent='Na dłuższy pobyt: CasaStudent';
-  const copy=document.querySelector('.footer-bottom span:first-child');if(copy)copy.textContent='© 2026 StudentBnB';
+  const bottom=document.querySelectorAll('.footer-bottom span');if(bottom[0])bottom[0].textContent='© 2026 StudentBnB';if(bottom[1])bottom[1].textContent='Polska · studentbnb.pl';
   const login=document.querySelector('#login-title');if(login)login.textContent='Zaloguj się do StudentBnB';
   const f=document.querySelector('.site-footer .container')||document.querySelector('footer');if(f&&!f.querySelector('.casastudent-family')){const b=document.createElement('div');b.className='casastudent-family';b.innerHTML='StudentBnB jest przeznaczony na tymczasowe pobyty w społeczności studenckiej. Jeśli szukasz czegoś na dłużej, odwiedź <a href="https://casastudent.pl/">CasaStudent ↗</a>.';f.appendChild(b)}
 });
