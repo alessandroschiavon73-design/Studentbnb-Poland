@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://studentbnb.pl/</loc></url>
-  <url><loc>https://studentbnb.pl/miasto.html</loc></url>
+  <url><loc>https://studentbnb.pl/miasto.html?city=gdansk</loc></url>
+  <url><loc>https://studentbnb.pl/miasto.html?city=poznan</loc></url>
+  <url><loc>https://studentbnb.pl/miasto.html?city=warszawa</loc></url>
+  <url><loc>https://studentbnb.pl/miasto.html?city=lodz</loc></url>
+  <url><loc>https://studentbnb.pl/miasto.html?city=wroclaw</loc></url>
+  <url><loc>https://studentbnb.pl/miasto.html?city=lublin</loc></url>
+  <url><loc>https://studentbnb.pl/miasto.html?city=katowice</loc></url>
+  <url><loc>https://studentbnb.pl/miasto.html?city=krakow</loc></url>
   <url><loc>https://studentbnb.pl/dodaj-ogloszenie.html</loc></url>
   <url><loc>https://studentbnb.pl/szukam.html</loc></url>
   <url><loc>https://studentbnb.pl/studenci.html</loc></url>

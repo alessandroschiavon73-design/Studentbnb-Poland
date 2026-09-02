@@ -10,3 +10,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   const hero=document.querySelector('.home-hero .hero-copy');if(hero){document.title='StudentBnB — Wypróbuj, zanim wybierzesz';const h=hero.querySelector('h1'),p=hero.querySelector(':scope > p');hero.querySelectorAll('.studentbnb-tagline,.studentbnb-duration-options').forEach(e=>e.remove());if(h)h.innerHTML='Najpierw ludzie,<br><span>potem pokój.</span>';if(p)p.textContent='Tydzień, dwa tygodnie lub miesiąc, aby poznać mieszkanie i ludzi przed podjęciem decyzji.'}
   let c=document.querySelector('link[rel="canonical"]');if(!c){c=document.createElement('link');c.rel='canonical';document.head.appendChild(c)}c.href=base+(location.pathname==='/'?'':location.pathname.replace(/^\//,''))+location.search;const og=document.querySelector('meta[property="og:site_name"]');if(og)og.content='StudentBnB — Wypróbuj, zanim wybierzesz';const intl=document.querySelector('.footer-international > strong');if(intl)intl.textContent='Na dłuższy pobyt: CasaStudent';const copy=document.querySelector('.footer-bottom span:first-child');if(copy)copy.textContent='© 2026 StudentBnB';const login=document.querySelector('#login-title');if(login)login.textContent='Zaloguj się do StudentBnB';const f=document.querySelector('.site-footer .container')||document.querySelector('footer');if(f&&!f.querySelector('.casastudent-family')){const b=document.createElement('div');b.className='casastudent-family';b.innerHTML='StudentBnB jest przeznaczony na tymczasowe pobyty w społeczności studenckiej. Jeśli szukasz czegoś na dłużej, odwiedź <a href="https://casastudent.pl/">CasaStudent ↗</a>.';f.appendChild(b)}
 });
+
+(function(){
+  const apply=()=>{
+    const canonical=document.querySelector('link[rel="canonical"]')?.href||location.href;
+    const description=document.querySelector('meta[name="description"]')?.content||'';
+    let schema=document.querySelector('#studentbnb-webpage-schema');
+    if(!schema){schema=document.createElement('script');schema.id='studentbnb-webpage-schema';schema.type='application/ld+json';document.head.appendChild(schema);}
+    schema.textContent=JSON.stringify({'@context':'https://schema.org','@type':'WebPage',name:document.title,url:canonical,description,inLanguage:document.documentElement.lang||'pl-PL'});
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(apply,0));else setTimeout(apply,0);
+})();
